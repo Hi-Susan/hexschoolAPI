@@ -1,0 +1,60 @@
+{
+  "name": "hexschoolapi",
+  "version": "1.0.0",
+  "description": "js作品實戰班-2020夏季",
+  "main": "index.js",
+  "scripts": {
+    "css": "npm-run-all --sequential css-compile css-prefix",
+    "css-compile-bash": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js --output-style expanded --precision 6 ",
+    "css-compile": "npm run css-compile-bash -- \"build/scss/\" -o \"dist/css/\"",
+    "css-prefix": "postcss --config build/config/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
+    "css-minify": "foreach -g \"dist/css/*[^.min].css\" -x \"cleancss -01 --source-map --source-map-inline-sources -o dist/css/#{name}.min.css #{path}\" --no-c",
+    "dev": "npm-run-all --parallel watch sync",
+    "js": "npm-run-all --sequential js-compile",
+    "js-compile": "rollup --config build/config/rollup.config.js",
+    "js-minify": "foreach -g \"dist/js/*[^.min].js\" -x  \"terser #{path} -o #{path}.min.js -c -m \" --no-c",
+    "plugins": "node build/npm/Publish.js -v",
+    "pug": "pug --pretty --no-debug build/pug/*.pug --out ./",
+    "sync": "browser-sync start --server --files *.html dist/",
+    "watch": "npm-run-all --parallel watch-html watch-css watch-js",
+    "watch-html": "nodemon --watch build/pug -e pug -x \"npm run pug\"",
+    "watch-css": "nodemon --watch build/scss -e scss -x \"npm run css\"",
+    "watch-js": "nodemon --watch build/js -e js -x \"npm run js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hi-Susan/hexschoolAPI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hi-Susan/hexschoolAPI/issues"
+  },
+  "homepage": "https://github.com/Hi-Susan/hexschoolAPI#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "autoprefixer": "^9.7.4",
+    "browser-sync": "^2.26.7",
+    "clean-css-cli": "^4.3.0",
+    "foreach-cli": "^1.8.1",
+    "gsap": "^3.2.4",
+    "jquerykeyframes": "^1.0.8",
+    "node-sass": "^4.13.1",
+    "node-sass-package-importer": "^5.3.2",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.0",
+    "pug": "^2.0.4",
+    "pug-cli": "^1.0.0-alpha6",
+    "rollup": "^1.31.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "terser": "^4.6.3"
+  },
+  "dependencies": {
+    "http-proxy": "^1.18.1"
+  }
+}
