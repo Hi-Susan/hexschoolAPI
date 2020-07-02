@@ -3,18 +3,18 @@ import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 
 const plugins = [
-  resolve(),
-  commonjs(),
+  
   babel({
     exclude: 'node_modules/**',
     runtimeHelpers: true,
     plugins: ['@babel/plugin-transform-runtime']
-  })
+  }),
+  resolve(),
+  commonjs(),
 ]
 const output = {
-  banner: '/*! GLP Lucky Draw Platform */',
   dir: 'dist/js/',
-  format: 'cjs'
+  format: 'iife'
 }
 
 export default [
