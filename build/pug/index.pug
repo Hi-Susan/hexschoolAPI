@@ -3,5 +3,124 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Document
+    title 課程 API 串接 | js作品實戰班-2020夏季
+    link(rel="stylesheet", href="public/plugins/normalize-css/normalize.css")
+    link(rel="stylesheet", href="public/plugins/icomon/style.css")
+    link(rel="stylesheet", href="dist/css/style.css")
   body
+    .wrapper
+      nav.navbar.flex.flex-column.flex-between.text-center
+        .nav-top
+          a(href="http://").button.button-icon.button-full#shopCar
+            i.icon-bag.icon.icon-m
+          a(href="").button.button-icon#menu
+            i.icon-list.icon.icon-m
+            .menu-text MENU
+        .nav-buttom
+          a(href="").button.button-icon#facebook
+            i.icon-facebook.icon
+          a(href="").button.button-icon#twitter
+            i.icon-twitter.icon
+          a(href="").button.button-icon#instagram
+            i.icon-instagram.icon
+          a(href="").button.button-icon#goto
+            i.icon-chevron-bar-up.icon
+      .content-wrapper
+        .content-header
+          .logo
+            img(src="build/svg/logo.svg")
+        .content-body
+          .products-menu
+            ul.products-menu-list
+              li.active 
+                a(href="") 全部商品
+              li.products-menu-dropdown 
+                a(href="") 手感麵包
+                .dropdown
+                  ul.dropdown-nav
+                    li 
+                      a(href="") 歐式麵包
+                    li 
+                      a(href="") 和風麵包
+                    li 
+                      a(href="") 丹麥可頌
+              li.products-menu-dropdown 
+                a(href="") 手感西點
+                .dropdown
+                  ul.dropdown-nav
+                    li 
+                      a(href="") 手工餅乾
+                    li 
+                      a(href="") 經典小點
+                    li 
+                      a(href="") 蛋糕、派
+          .products-content
+            ol.breadcrumb
+              li.breadcrumb-item 首頁
+              li.breadcrumb-item 商品列表
+            .content-title 
+              | 全部商品
+              span
+                | ( 
+                span 152
+                | )
+            .products-sort-item 排序：
+              a(href="").item.active 價格低至高
+              a(href="").item 價格高至低
+              a(href="").item 購買人氣最高
+              a(href="").item 最新上架
+            .products-list
+              div
+                .products-card
+                  .products-card-tag 8折
+                  .products-card-image
+                    img(src="https://images.unsplash.com/photo-1574085733277-851d9d856a3a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1655&q=80", alt="")
+                    a(href="").products-card-button 加入購物車
+                  .products-card-title 法式古典巧克力蛋糕
+                  .products-card-price 165
+                  .products-card-info 2010世界麵包大師賽冠軍麵包！
+                  a(href="").products-card-link
+              div
+                .products-card
+                  .products-card-tag 85折
+                  .products-card-image
+                    img(src="https://images.unsplash.com/photo-1574085733277-851d9d856a3a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1655&q=80", alt="")
+                    a(href="").products-card-button 加入購物車
+                  .products-card-title 法式古典巧克力蛋糕
+                  .products-card-price 165
+                  .products-card-info 2010世界麵包大師賽冠軍麵包！
+                  a(href="").products-card-link
+              div
+                .products-card
+                  .products-card-tag 85折
+                  .products-card-image
+                    img(src="https://images.unsplash.com/photo-1574085733277-851d9d856a3a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1655&q=80", alt="")
+                    a(href="").products-card-button 加入購物車
+                  .products-card-title 法式古典巧克力蛋糕
+                  .products-card-price 165
+                  .products-card-info 2010世界麵包大師賽冠軍麵包！
+                  a(href="").products-card-link
+              div
+                .products-card
+                  .products-card-tag 85折
+                  .products-card-image
+                    img(src="https://images.unsplash.com/photo-1574085733277-851d9d856a3a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1655&q=80", alt="")
+                    a(href="").products-card-button 加入購物車
+                  .products-card-title 法式古典巧克力蛋糕
+                  .products-card-price 165
+                  .products-card-info 2010世界麵包大師賽冠軍麵包！
+                  a(href="").products-card-link
+              div
+                .products-card
+                  .products-card-tag 85折
+                  .products-card-image
+                    img(src="https://images.unsplash.com/photo-1574085733277-851d9d856a3a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1655&q=80", alt="")
+                    a(href="").products-card-button 加入購物車
+                  .products-card-title 法式古典巧克力蛋糕
+                  .products-card-price 165
+                  .products-card-info 2010世界麵包大師賽冠軍麵包！
+                  a(href="").products-card-link
+            
+        footer
+    script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")
+    script(src="dist/js/index.js")
