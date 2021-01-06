@@ -56,6 +56,6 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
-    "axios": "^0.19.2"
+    "axios": "^0.21.1"
   }
 }
